@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KŸPFER</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wghtplay=swap
+
+<style>
+
+:root{
+    --gold:#d4af37;
+    --bg:#050505;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:white;
+    font-family:'Cinzel',serif;
+    overflow-x:hidden;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo{
+    width:360px;
+    max-width:80vw;
+    animation:sway 180s ease-in-out infinite;
+}
+
+.name{
+    color:var(--gold);
+    font-size:3rem;
+    letter-spacing:.35em;
+    margin-top:120px;
+}
+
+.section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px;
+}
+
+.content{
+    max-width:900px;
+    text-align:center;
+}
+
+.motto{
+    color:var(--gold);
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.origin{
+    color:#b9922c;
+    letter-spacing:.15em;
+    margin-bottom:60px;
+}
+
+.story{
+    line-height:1.9;
+    color:#cccccc;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 1.5s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes sway{
+
+    0%{
+        transform:perspective(1400px) rotateY(0deg);
+    }
+
+    25%{
+        transform:perspective(1400px) rotateY(-5deg);
+    }
+
+    50%{
+        transform:perspective(1400px) rotateY(0deg);
+    }
+
+    75%{
+        transform:perspective(1400px) rotateY(5deg);
+    }
+
+    100%{
+        transform:perspective(1400px) rotateY(0deg);
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+<svg class="logo" viewBox="0 0 600 600">
+
+<!-- Schweizer Kreuz -->
+<rect x="285" y="50" width="30" height="120" fill="#d4af37"/>
+<rect x="240" y="95" width="120" height="30" fill="#d4af37"/>
+
+<!-- Halbmond -->
+<path
+d="M170 260
+Q300 180
+430 260"
+stroke="#d4af37"
+stroke-width="20"
+fill="none"
+stroke-linecap="round"
+/>
+
+<!-- Dreiberg -->
+<path d="M100 500 Q185 350 270 500 Z" fill="#d4af37"/>
+<path d="M205 500 Q300 250 395 500 Z" fill="#d4af37"/>
+<path d="M330 500 Q415 350 500 500 Z" fill="#d4af37"/>
+
+</svg>
+
+<div class="name">KŸPFER</div>
+
+</section>
+
+<section class="section">
+
+<div class="content reveal">
+
+<div class="motto">
+Familia per Generationes
+</div>
+
+<div class="origin">
+Lauperswil im Emmental seit 1650
+</div>
+
+<div class="story">
+
+Hier beginnt die Geschichte der Familie KŸPFER.
+
+Diese Seite wird schrittweise zu einem digitalen Familienarchiv ausgebaut und soll die Herkunft, Geschichte und die über Generationen bewahrten Erinnerungen dokumentieren.
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+
+});
+
+},{threshold:0.2});
+
+document.querySelectorAll('.reveal').forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
