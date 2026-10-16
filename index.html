@@ -1,271 +1,337 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
+
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>KŸPFER</title>
 
 https://fonts.googleapis.com
-<link://fonts.gstatic.com
-<link href="https://fonts.googleapis.com/css2?family=400;500;600&display=swap
+https://fonts.gstatic.com
+https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap
 
 <style>
 
 :root{
-  --bg:#050505;
-  --gold:#d8b45a;
+    --gold:#d6b063;
+    --gold-soft:#af8a3d;
+    --text:#d4d4d4;
+    --bg:#050505;
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:'Cinzel',serif;
-  background:#050505;
-  color:white;
-  overflow-x:hidden;
+    background:var(--bg);
+    color:white;
+    font-family:'Cinzel', serif;
+    overflow-x:hidden;
 }
 
-/* Hero */
+/* Hintergrund */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.02) 0%,
+            rgba(255,255,255,0) 55%
+        );
+
+    pointer-events:none;
+}
+
+/* ===================================
+   HERO
+=================================== */
 
 .hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background:
-    radial-gradient(circle at center,
-    #111111 0%,
-    #050505 65%,
-    #000000 100%);
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
 }
 
-.logo{
-  width:min(420px,80vw);
-  animation:sway 180s ease-in-out infinite;
+.hero-inner{
+
+    text-align:center;
 }
 
-.name{
-  margin-top:140px;
-  color:var(--gold);
-  font-size:clamp(2rem,4vw,4rem);
-  letter-spacing:.30em;
+.hero-logo{
+
+    width:min(700px,80vw);
+
+    opacity:0;
+
+    animation:
+        fadeIn 3s ease forwards,
+        sway 240s ease-in-out infinite;
 }
 
-.scroll{
-  margin-top:50px;
-  color:#8a6a26;
-  font-size:.8rem;
-  letter-spacing:.4em;
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#7d6330;
+
+    letter-spacing:.4em;
+
+    font-size:.75rem;
 }
 
-/* Abschnitt 2 */
+/* ===================================
+   CONTENT
+=================================== */
 
 .section{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:80px 30px;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:100px 30px;
 }
 
 .content{
-  max-width:850px;
-  text-align:center;
+
+    max-width:900px;
+
+    text-align:center;
 }
 
 .motto{
-  color:var(--gold);
-  font-size:clamp(2rem,4vw,3.2rem);
-  margin-bottom:20px;
+
+    color:var(--gold);
+
+    font-size:clamp(2rem,5vw,4rem);
+
+    margin-bottom:20px;
 }
 
 .origin{
-  color:#af8a37;
-  margin-bottom:50px;
-  letter-spacing:.15em;
+
+    color:var(--gold-soft);
+
+    margin-bottom:70px;
+
+    letter-spacing:.15em;
+
+    font-size:1rem;
 }
 
 .story{
-  color:#d0d0d0;
-  line-height:2;
-  font-size:1.1rem;
+
+    color:var(--text);
+
+    line-height:2;
+
+    font-size:1.08rem;
 }
 
-/* Fade-In */
+.section-title{
+
+    color:var(--gold);
+
+    font-size:clamp(1.8rem,4vw,3rem);
+
+    margin-bottom:40px;
+}
+
+/* ===================================
+   SCROLL EFFECT
+=================================== */
 
 .reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 1.5s ease;
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
 }
 
 .reveal.visible{
-  opacity:1;
-  transform:translateY(0);
+
+    opacity:1;
+
+    transform:translateY(0);
 }
 
-/* Schwenken */
+/* ===================================
+   ANIMATIONEN
+=================================== */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
 
 @keyframes sway{
 
-  0%{
-    transform:perspective(2200px) rotateY(0deg);
-  }
+    0%{
+        transform:
+            perspective(3000px)
+            rotateY(0deg);
+    }
 
-  25%{
-    transform:perspective(2200px) rotateY(-5deg);
-  }
+    25%{
+        transform:
+            perspective(3000px)
+            rotateY(-2deg);
+    }
 
-  50%{
-    transform:perspective(2200px) rotateY(0deg);
-  }
+    50%{
+        transform:
+            perspective(3000px)
+            rotateY(0deg);
+    }
 
-  75%{
-    transform:perspective(2200px) rotateY(5deg);
-  }
+    75%{
+        transform:
+            perspective(3000px)
+            rotateY(2deg);
+    }
 
-  100%{
-    transform:perspective(2200px) rotateY(0deg);
-  }
-
+    100%{
+        transform:
+            perspective(3000px)
+            rotateY(0deg);
+    }
 }
 
 </style>
+
 </head>
 
 <body>
 
+<!-- ===================================
+     HERO
+=================================== -->
+
 <section class="hero">
 
-<svg class="logo" viewBox="0 0 600 600">
+    <div class="hero-inner">
 
-<defs>
+        version3.png
 
-<linearGradient id="gold"
-  x1="0%"
-  y1="0%"
-  x2="100%"
-  y2="100%">
+    </div>
 
-  <stop offset="0%" stop-color="#fff0bf"/>
-  <stop offset="25%" stop-color="#ddb85f"/>
-  <stop offset="50%" stop-color="#a9781f"/>
-  <stop offset="75%" stop-color="#ddb85f"/>
-  <stop offset="100%" stop-color="#fff0bf"/>
-
-</linearGradient>
-
-</defs>
-
-<!-- Kreuz -->
-
-<rect x="290"
-      y="80"
-      width="20"
-      height="80"
-      rx="3"
-      fill="url(#gold)" />
-
-<rect x="260"
-      y="110"
-      width="80"
-      height="20"
-      rx="3"
-      fill="url(#gold)" />
-
-<!-- Halbmond -->
-
-<path
-  d="M160 250
-     Q300 170
-     440 250"
-
-  stroke="url(#gold)"
-  stroke-width="18"
-  fill="none"
-  stroke-linecap="round" />
-
-<!-- Dreiberg -->
-
-<path
-  d="M150 420
-     Q190 365
-     230 420 Z"
-  fill="url(#gold)" />
-
-<path
-  d="M245 420
-     Q300 330
-     355 420 Z"
-  fill="url(#gold)" />
-
-<path
-  d="M370 420
-     Q410 365
-     450 420 Z"
-  fill="url(#gold)" />
-
-</svg>
-
-<div class="name">KŸPFER</div>
-
-<div class="scroll">
-SCROLL
-</div>
+    <div class="scroll-indicator">
+        SCROLL
+    </div>
 
 </section>
 
+<!-- ===================================
+     FAMILIA PER GENERATIONES
+=================================== -->
+
 <section class="section">
 
-<div class="content reveal">
+    <div class="content reveal">
 
-<div class="motto">
-Familia per Generationes
-</div>
+        <div class="motto">
+            Familia per Generationes
+        </div>
 
-<div class="origin">
-Lauperswil im Emmental seit 1650
-</div>
+        <div class="origin">
+            Lauperswil im Emmental seit 1650
+        </div>
 
-<div class="story">
-Hier beginnt die Geschichte der Familie KŸPFER.
+    </div>
 
-Über Generationen hinweg wurden Erinnerungen, Dokumente, Traditionen und Familienlinien bewahrt.
+</section>
 
-Diese Website wird schrittweise zu einem digitalen Familienarchiv ausgebaut.
-</div>
+<!-- ===================================
+     GESCHICHTE
+=================================== -->
 
-</div>
+<section class="section">
+
+    <div class="content reveal">
+
+        <div class="section-title">
+            Die Familie KŸPFER
+        </div>
+
+        <div class="story">
+
+            Die Familie KŸPFER ist im Emmental seit mindestens
+            1650 nachweisbar.
+
+            Diese Website wird schrittweise zu einem digitalen
+            Familienarchiv ausgebaut und soll Herkunft,
+            Geschichte, Dokumente, Fotografien und Erinnerungen
+            über Generationen hinweg bewahren.
+
+        </div>
+
+    </div>
 
 </section>
 
 <script>
 
-const observer = new IntersectionObserver((entries)=>{
+const observer = new IntersectionObserver(
 
-  entries.forEach((entry)=>{
+(entries)=>{
 
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-    }
+    entries.forEach(entry=>{
 
-  });
+        if(entry.isIntersecting){
 
-},{threshold:0.2});
+            entry.target.classList.add('visible');
 
-document.querySelectorAll('.reveal').forEach((el)=>{
-  observer.observe(el);
-});
+        }
+
+    });
+
+},
+
+{
+    threshold:0.2
+}
+
+);
+
+document
+.querySelectorAll('.reveal')
+.forEach(el=>observer.observe(el));
 
 </script>
 
