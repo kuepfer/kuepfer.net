@@ -1,268 +1,34 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KŸPFER</title>
+<title>KŸPFER</title>
 
-    https://fonts.googleapis.com
-    https://fonts.gstatic.com
-    <link href="https://fonts.googleapis.com/css2?family=Cin;500;600&display=swap
+<style>
 
-    <style>
+body{
+    margin:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
 
-        :root{
-            --bg:#050505;
-            --gold:#d6b063;
-            --gold-soft:#b99549;
-            --text:#d0d0d0;
-        }
+img{
+    max-width:80vw;
+    max-height:80vh;
+}
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        html{
-            scroll-behavior:smooth;
-        }
-
-        body{
-            background:var(--bg);
-            color:white;
-            font-family:'Cinzel', serif;
-            overflow-x:hidden;
-        }
-
-        /* HERO */
-
-        .hero{
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            position:relative;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    #131313 0%,
-                    #070707 45%,
-                    #000000 100%
-                );
-        }
-
-        .hero-content{
-            text-align:center;
-        }
-
-        .hero-logo{
-            width:min(700px,80vw);
-            display:block;
-            margin:auto;
-
-            animation:
-                fadeIn 2s ease forwards,
-                sway 240s ease-in-out infinite;
-        }
-
-        .scroll-hint{
-            position:absolute;
-            bottom:35px;
-            left:50%;
-            transform:translateX(-50%);
-
-            color:#8f6f2a;
-            letter-spacing:.45em;
-            font-size:.8rem;
-        }
-
-        /* CONTENT */
-
-        section.content-section{
-            min-height:100vh;
-
-            display:flex;
-            justify-content:center;
-            align-items:center;
-
-            padding:80px 30px;
-        }
-
-        .content{
-            max-width:900px;
-            text-align:center;
-        }
-
-        .headline{
-            color:var(--gold);
-            font-size:clamp(2rem,4vw,4rem);
-            margin-bottom:20px;
-        }
-
-        .subheadline{
-            color:var(--gold-soft);
-            letter-spacing:.15em;
-            margin-bottom:60px;
-        }
-
-        .text{
-            color:var(--text);
-            line-height:2;
-            font-size:1.1rem;
-        }
-
-        /* REVEAL */
-
-        .reveal{
-            opacity:0;
-            transform:translateY(50px);
-            transition:
-                opacity 1.5s ease,
-                transform 1.5s ease;
-        }
-
-        .reveal.visible{
-            opacity:1;
-            transform:translateY(0);
-        }
-
-        /* ANIMATIONEN */
-
-        @keyframes fadeIn{
-
-            from{
-                opacity:0;
-            }
-
-            to{
-                opacity:1;
-            }
-        }
-
-        @keyframes sway{
-
-            0%{
-                transform:
-                    perspective(4000px)
-                    rotateY(0deg);
-            }
-
-            25%{
-                transform:
-                    perspective(4000px)
-                    rotateY(-2deg);
-            }
-
-            50%{
-                transform:
-                    perspective(4000px)
-                    rotateY(0deg);
-            }
-
-            75%{
-                transform:
-                    perspective(4000px)
-                    rotateY(2deg);
-            }
-
-            100%{
-                transform:
-                    perspective(4000px)
-                    rotateY(0deg);
-            }
-        }
-
-    </style>
+</style>
 
 </head>
 
 <body>
 
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            version3.png
-
-        </div>
-
-        <div class="scroll-hint">
-            SCROLL
-        </div>
-
-    </section>
-
-    <!-- FAMILIA -->
-
-    <section class="content-section">
-
-        <div class="content reveal">
-
-            <h1 class="headline">
-                Familia per Generationes
-            </h1>
-
-            <div class="subheadline">
-                Lauperswil im Emmental seit 1650
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- GESCHICHTE -->
-
-    <section class="content-section">
-
-        <div class="content reveal">
-
-            <h2 class="headline">
-                Die Familie KŸPFER
-            </h2>
-
-            <div class="text">
-
-                Die Familie KŸPFER ist im Emmental seit mindestens
-                1650 nachweisbar.
-
-                Diese Website wird schrittweise zu einem digitalen
-                Familienarchiv ausgebaut und soll Herkunft,
-                Geschichte, Dokumente, Fotografien und Erinnerungen
-                über Generationen hinweg bewahren.
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <script>
-
-        const observer =
-            new IntersectionObserver(entries => {
-
-                entries.forEach(entry => {
-
-                    if(entry.isIntersecting){
-                        entry.target.classList.add('visible');
-                    }
-
-                });
-
-            },{
-                threshold:0.2
-            });
-
-        document
-            .querySelectorAll('.reveal')
-            .forEach(el => observer.observe(el));
-
-    </script>
+<imgion3.png
 
 </body>
 </html>
