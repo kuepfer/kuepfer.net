@@ -6,11 +6,16 @@
 
 <title>KŸPFER</title>
 
-<link //fonts.googleapis.com
-<link rel="preconnect" href="https://fonts.://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="   --bg:#050505;
-    --gold1:#fff0bf;
-    --gold2:#d7b45a;
-    --gold3:#9a6e18;
+https://fonts.googleapis.com
+<link rel="preconnect.com
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&
+
+<style>
+
+:root{
+    --bg:#050505;
+    --gold:#d8b45a;
+    --gold-dark:#9f7420;
 }
 
 *{
@@ -24,140 +29,175 @@ html{
 }
 
 body{
-    background:var(--bg);
-    font-family:'Cinzel', serif;
+
+    font-family:'Cinzel',serif;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #0d0d0d 0%,
+        #050505 55%,
+        #000000 100%
+    );
+
     overflow-x:hidden;
 }
 
 /* HERO */
 
 .hero{
-    height:100vh;
+
+    min-height:100vh;
+
     display:flex;
     flex-direction:column;
+
     justify-content:center;
     align-items:center;
+
     position:relative;
 }
 
 .logo{
-    width:min(450px,80vw);
+
+    width:min(500px,80vw);
+
     animation:sway 180s ease-in-out infinite;
 }
 
 .name{
-    margin-top:140px;
-    color:#d7b45a;
-    letter-spacing:0.35em;
-    font-size:clamp(2rem,4vw,4rem);
+
+    margin-top:210px;
+
+    color:var(--gold);
+
+    font-size:clamp(2rem,4vw,4.5rem);
+
+    letter-spacing:.32em;
+
     text-shadow:
-        0 0 8px rgba(215,180,90,.25),
-        0 0 24px rgba(215,180,90,.15);
+        0 0 8px rgba(216,180,90,.25),
+        0 0 20px rgba(216,180,90,.10);
 }
 
 .scroll{
+
     position:absolute;
-    bottom:30px;
-    color:#756039;
-    letter-spacing:.4em;
-    font-size:.8rem;
+
+    bottom:32px;
+
+    color:#6f5927;
+
+    font-size:.75rem;
+
+    letter-spacing:.45em;
 }
 
 /* CONTENT */
 
 .section{
+
     min-height:100vh;
+
     display:flex;
+
     justify-content:center;
     align-items:center;
-    padding:6rem 2rem;
+
+    padding:100px 40px;
 }
 
 .content{
+
     max-width:900px;
     text-align:center;
 }
 
 .motto{
-    color:#d7b45a;
+
+    color:var(--gold);
+
     font-size:clamp(2rem,4vw,3.5rem);
-    margin-bottom:1rem;
+
+    margin-bottom:20px;
 }
 
 .origin{
-    color:#ac8b42;
-    margin-bottom:4rem;
-    letter-spacing:.18em;
+
+    color:#b89242;
+
+    margin-bottom:60px;
+
+    letter-spacing:.15em;
 }
 
 .story{
-    color:#d0d0d0;
+
+    color:#cfcfcf;
+
     line-height:2;
-    font-size:1.1rem;
+
+    font-size:1.05rem;
 }
 
 /* FADE IN */
 
 .reveal{
+
     opacity:0;
-    transform:translateY(50px);
-    transition:all 1.5s ease;
+
+    transform:translateY(60px);
+
+    transition:
+      opacity 1.5s ease,
+      transform 1.5s ease;
 }
 
 .reveal.visible{
+
     opacity:1;
     transform:translateY(0);
 }
 
-/* LOGO SWAY */
+/* SCHWENKEN */
 
-@keyframes sway {
+@keyframes sway{
 
     0%{
-        transform:
-        perspective(2000px)
-        rotateY(0deg);
+        transform:perspective(2200px) rotateY(0deg);
     }
 
     25%{
-        transform:
-        perspective(2000px)
-        rotateY(-5deg);
+        transform:perspective(2200px) rotateY(-5deg);
     }
 
     50%{
-        transform:
-        perspective(2000px)
-        rotateY(0deg);
+        transform:perspective(2200px) rotateY(0deg);
     }
 
     75%{
-        transform:
-        perspective(2000px)
-        rotateY(5deg);
+        transform:perspective(2200px) rotateY(5deg);
     }
 
     100%{
-        transform:
-        perspective(2000px)
-        rotateY(0deg);
+        transform:perspective(2200px) rotateY(0deg);
     }
 }
 
-/* GOLD SHIMMER */
+/* SCHIMMER */
 
-.shine{
-    animation:shineMove 75s linear infinite;
+.shimmer{
+    animation:shineMove 120s linear infinite;
 }
 
 @keyframes shineMove{
 
     from{
-        transform:translateX(-180%);
+        transform:translateX(-250%);
     }
 
     to{
-        transform:translateX(220%);
+        transform:translateX(250%);
     }
 }
 
@@ -168,44 +208,51 @@ body{
 
 <section class="hero">
 
-<svg class="logo" viewBox="0 0 600 620">
+<svg class="logo" viewBox="0 0 600 650">
 
 <defs>
 
-<linearGradient id="gold">
+<linearGradient id="gold"
+x1="0%" y1="0%"
+x2="100%" y2="100%">
 
-    <stop offset="0%" stop-color="#fff0bf"/>
-    <stop offset="25%" stop-color="#ddb85f"/>
-    <stop offset="50%" stop-color="#a5771f"/>
-    <stop offset="75%" stop-color="#ddb85f"/>
-    <stop offset="100%" stop-color="#fff0bf"/>
+<stop offset="0%" stop-color="#fff0bf"/>
+<stop offset="18%" stop-color="#e1bf65"/>
+<stop offset="42%" stop-color="#c99a35"/>
+<stop offset="58%" stop-color="#8f6415"/>
+<stop offset="76%" stop-color="#d6b15a"/>
+<stop offset="100%" stop-color="#fff0c4"/>
 
 </linearGradient>
 
 <mask id="logoMask">
 
-    <g fill="white">
+<g fill="white">
 
-        <!-- Kreuz -->
-        <rect x="285" y="40" width="30" height="110"/>
-        <rect x="245" y="80" width="110" height="30"/>
+<!-- Kreuz -->
 
-        <!-- Halbmond -->
-        <path
-            d="M150 240
-               Q300 150
-               450 240"
-            stroke="white"
-            stroke-width="22"
-            fill="none"
-            stroke-linecap="round"/>
+<rect x="288" y="70" width="24" height="90"/>
+<rect x="252" y="103" width="96" height="24"/>
 
-        <!-- Dreiberg -->
-        <path d="M80 500 Q180 320 280 500 Z"/>
-        <path d="M200 500 Q300 220 400 500 Z"/>
-        <path d="M320 500 Q420 320 520 500 Z"/>
+<!-- Halbmond -->
 
-    </g>
+<path
+d="M155 260
+Q300 180
+445 260"
+
+stroke="white"
+stroke-width="18"
+fill="none"
+stroke-linecap="round"/>
+
+<!-- Dreiberg -->
+
+<path d="M150 520 Q195 450 240 520 Z"/>
+<path d="M245 520 Q300 405 355 520 Z"/>
+<path d="M360 520 Q405 450 450 520 Z"/>
+
+</g>
 
 </mask>
 
@@ -213,52 +260,60 @@ body{
 
 <!-- Kreuz -->
 
-<rect x="285" y="40"
-      width="30"
-      height="110"
-      fill="url(#gold)"
-      rx="4"/>
+<rect
+x="288"
+y="70"
+width="24"
+height="90"
+rx="3"
+fill="url(#gold)"/>
 
-<rect x="245" y="80"
-      width="110"
-      height="30"
-      fill="url(#gold)"
-      rx="4"/>
+<rect
+x="252"
+y="103"
+width="96"
+height="24"
+rx="3"
+fill="url(#gold)"/>
 
 <!-- Halbmond -->
 
 <path
-    d="M150 240
-       Q300 150
-       450 240"
-    stroke="url(#gold)"
-    stroke-width="22"
-    fill="none"
-    stroke-linecap="round"/>
+d="M155 260
+Q300 180
+445 260"
+
+stroke="url(#gold)"
+stroke-width="18"
+fill="none"
+stroke-linecap="round"/>
 
 <!-- Dreiberg -->
 
-<path d="M80 500 Q180 320 280 500 Z"
-      fill="url(#gold)"/>
+<path
+d="M150 520 Q195 450 240 520 Z"
+fill="url(#gold)"/>
 
-<path d="M200 500 Q300 220 400 500 Z"
-      fill="url(#gold)"/>
+<path
+d="M245 520 Q300 405 355 520 Z"
+fill="url(#gold)"/>
 
-<path d="M320 500 Q420 320 520 500 Z"
-      fill="url(#gold)"/>
+<path
+d="M360 520 Q405 450 450 520 Z"
+fill="url(#gold)"/>
 
-<!-- Goldschimmer -->
+<!-- Schimmer -->
 
-<g class="shine">
+<g class="shimmer">
 
-    <rect
-        x="-600"
-        y="0"
-        width="120"
-        height="620"
-        fill="rgba(255,255,255,.7)"
-        mask="url(#logoMask)"
-        opacity=".25"/>
+<rect
+x="-500"
+y="-50"
+width="80"
+height="900"
+fill="white"
+opacity=".15"
+mask="url(#logoMask)"/>
 
 </g>
 
@@ -274,9 +329,9 @@ body{
 
 <div class="content reveal">
 
-<h1 class="motto">
+<div class="motto">
 Familia per Generationes
-</h1>
+</div>
 
 <div class="origin">
 Lauperswil im Emmental seit 1650
@@ -286,13 +341,14 @@ Lauperswil im Emmental seit 1650
 
 Hier beginnt die Geschichte der Familie KŸPFER.
 
-Über Generationen hinweg wurden Erinnerungen, Dokumente,
-Traditionen und Familienlinien bewahrt.
+Über Generationen hinweg wurden Erinnerungen,
+Dokumente, Traditionen und Familienlinien bewahrt.
 
-Diese Seite wird schrittweise zu einem digitalen
-Familienarchiv ausgebaut und soll die Herkunft,
-Geschichte und die Menschen verbinden, die den Namen
-KŸPFER über Jahrhunderte hinweg getragen haben.
+Diese Website wird schrittweise zu einem digitalen
+Familienarchiv ausgebaut und soll Herkunft,
+Geschichte und die Menschen verbinden,
+die den Namen KŸPFER über Jahrhunderte hinweg
+getragen haben.
 
 </div>
 
@@ -302,7 +358,8 @@ KŸPFER über Jahrhunderte hinweg getragen haben.
 
 <script>
 
-const observer = new IntersectionObserver(entries => {
+const observer =
+new IntersectionObserver(entries => {
 
 entries.forEach(entry => {
 
@@ -312,7 +369,7 @@ entry.target.classList.add('visible');
 
 });
 
-}, {
+},{
 threshold:0.2
 });
 
