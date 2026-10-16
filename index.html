@@ -1,299 +1,268 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>KŸPFER</title>
-
-https://fonts.googleapis.com
-https://fonts.gstatic.com
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600p
-
-<style>
-
-:root{
-    --gold:#d9b15c;
-    --gold-soft:#af8f49;
-    --bg:#050505;
-    --text:#d2d2d2;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-
-    background:
-        radial-gradient(
-            circle at center,
-            #111111 0%,
-            #050505 60%,
-            #000000 100%
-        );
-
-    color:white;
-
-    font-family:'Cinzel',serif;
-
-    overflow-x:hidden;
-}
-
-/* HERO */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    position:relative;
-}
-
-.hero-inner{
-
-    text-align:center;
-}
-
-.hero-logo{
-
-    width:min(750px,85vw);
-
-    opacity:0;
-
-    animation:
-        fadeIn 2.5s ease forwards,
-        sway 240s ease-in-out infinite;
-}
-
-.scroll{
-
-    position:absolute;
-
-    bottom:35px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    color:#8b6a28;
-
-    letter-spacing:.45em;
-
-    font-size:.8rem;
-}
-
-/* CONTENT */
-
-.section{
-
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:100px 40px;
-}
-
-.content{
-
-    max-width:900px;
-
-    text-align:center;
-}
-
-.motto{
-
-    color:var(--gold);
-
-    font-size:clamp(2rem,4vw,4rem);
-
-    margin-bottom:20px;
-}
-
-.origin{
-
-    color:var(--gold-soft);
-
-    letter-spacing:.15em;
-
-    margin-bottom:60px;
-}
-
-.story{
-
-    color:var(--text);
-
-    font-size:1.1rem;
-
-    line-height:2;
-}
-
-/* FADE IN */
-
-.reveal{
-
-    opacity:0;
-
-    transform:translateY(50px);
-
-    transition:
-        opacity 1.5s ease,
-        transform 1.5s ease;
-}
-
-.reveal.visible{
-
-    opacity:1;
-
-    transform:translateY(0);
-}
-
-/* ANIMATION */
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
-    }
-
-    to{
-        opacity:1;
-    }
-}
-
-@keyframes sway{
-
-    0%{
-        transform:
-            perspective(3000px)
-            rotateY(0deg);
-    }
-
-    25%{
-        transform:
-            perspective(3000px)
-            rotateY(-2deg);
-    }
-
-    50%{
-        transform:
-            perspective(3000px)
-            rotateY(0deg);
-    }
-
-    75%{
-        transform:
-            perspective(3000px)
-            rotateY(2deg);
-    }
-
-    100%{
-        transform:
-            perspective(3000px)
-            rotateY(0deg);
-    }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KŸPFER</title>
+
+    https://fonts.googleapis.com
+    https://fonts.gstatic.com
+    <link href="https://fonts.googleapis.com/css2?family=Cin;500;600&display=swap
+
+    <style>
+
+        :root{
+            --bg:#050505;
+            --gold:#d6b063;
+            --gold-soft:#b99549;
+            --text:#d0d0d0;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:var(--bg);
+            color:white;
+            font-family:'Cinzel', serif;
+            overflow-x:hidden;
+        }
+
+        /* HERO */
+
+        .hero{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position:relative;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #131313 0%,
+                    #070707 45%,
+                    #000000 100%
+                );
+        }
+
+        .hero-content{
+            text-align:center;
+        }
+
+        .hero-logo{
+            width:min(700px,80vw);
+            display:block;
+            margin:auto;
+
+            animation:
+                fadeIn 2s ease forwards,
+                sway 240s ease-in-out infinite;
+        }
+
+        .scroll-hint{
+            position:absolute;
+            bottom:35px;
+            left:50%;
+            transform:translateX(-50%);
+
+            color:#8f6f2a;
+            letter-spacing:.45em;
+            font-size:.8rem;
+        }
+
+        /* CONTENT */
+
+        section.content-section{
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            padding:80px 30px;
+        }
+
+        .content{
+            max-width:900px;
+            text-align:center;
+        }
+
+        .headline{
+            color:var(--gold);
+            font-size:clamp(2rem,4vw,4rem);
+            margin-bottom:20px;
+        }
+
+        .subheadline{
+            color:var(--gold-soft);
+            letter-spacing:.15em;
+            margin-bottom:60px;
+        }
+
+        .text{
+            color:var(--text);
+            line-height:2;
+            font-size:1.1rem;
+        }
+
+        /* REVEAL */
+
+        .reveal{
+            opacity:0;
+            transform:translateY(50px);
+            transition:
+                opacity 1.5s ease,
+                transform 1.5s ease;
+        }
+
+        .reveal.visible{
+            opacity:1;
+            transform:translateY(0);
+        }
+
+        /* ANIMATIONEN */
+
+        @keyframes fadeIn{
+
+            from{
+                opacity:0;
+            }
+
+            to{
+                opacity:1;
+            }
+        }
+
+        @keyframes sway{
+
+            0%{
+                transform:
+                    perspective(4000px)
+                    rotateY(0deg);
+            }
+
+            25%{
+                transform:
+                    perspective(4000px)
+                    rotateY(-2deg);
+            }
+
+            50%{
+                transform:
+                    perspective(4000px)
+                    rotateY(0deg);
+            }
+
+            75%{
+                transform:
+                    perspective(4000px)
+                    rotateY(2deg);
+            }
+
+            100%{
+                transform:
+                    perspective(4000px)
+                    rotateY(0deg);
+            }
+        }
+
+    </style>
 
 </head>
 
 <body>
 
-<section class="hero">
+    <!-- HERO -->
 
-    <div class="hero-inner">
+    <section class="hero">
 
-        version3.png
+        <div class="hero-content">
 
-    </div>
-
-    <div class="scroll">
-        SCROLL
-    </div>
-
-</section>
-
-<section class="section">
-
-    <div class="content reveal">
-
-        <div class="motto">
-
-            Familia per Generationes
+            version3.png
 
         </div>
 
-        <div class="origin">
+        <div class="scroll-hint">
+            SCROLL
+        </div>
 
-            Lauperswil im Emmental seit 1650
+    </section>
+
+    <!-- FAMILIA -->
+
+    <section class="content-section">
+
+        <div class="content reveal">
+
+            <h1 class="headline">
+                Familia per Generationes
+            </h1>
+
+            <div class="subheadline">
+                Lauperswil im Emmental seit 1650
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- GESCHICHTE -->
 
-<section class="section">
+    <section class="content-section">
 
-    <div class="content reveal">
+        <div class="content reveal">
 
-        <div class="motto">
+            <h2 class="headline">
+                Die Familie KŸPFER
+            </h2>
 
-            Die Familie KŸPFER
+            <div class="text">
+
+                Die Familie KŸPFER ist im Emmental seit mindestens
+                1650 nachweisbar.
+
+                Diese Website wird schrittweise zu einem digitalen
+                Familienarchiv ausgebaut und soll Herkunft,
+                Geschichte, Dokumente, Fotografien und Erinnerungen
+                über Generationen hinweg bewahren.
+
+            </div>
 
         </div>
 
-        <div class="story">
+    </section>
 
-            Die Familie KŸPFER ist im Emmental seit mindestens 1650 nachweisbar.
+    <script>
 
-            Diese Website wird schrittweise zu einem digitalen Familienarchiv ausgebaut und soll Herkunft, Geschichte, Dokumente, Fotografien und Erinnerungen über Generationen hinweg bewahren.
+        const observer =
+            new IntersectionObserver(entries => {
 
-        </div>
+                entries.forEach(entry => {
 
-    </div>
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('visible');
+                    }
 
-</section>
+                });
 
-<script>
+            },{
+                threshold:0.2
+            });
 
-const observer =
-new IntersectionObserver(entries => {
+        document
+            .querySelectorAll('.reveal')
+            .forEach(el => observer.observe(el));
 
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add('visible');
-
-        }
-
-    });
-
-},{
-    threshold:0.2
-});
-
-document
-.querySelectorAll('.reveal')
-.forEach(el => observer.observe(el));
-
-</script>
+    </script>
 
 </body>
 </html>
