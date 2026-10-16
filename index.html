@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>KŸPFER</title>
 
 https://fonts.googleapis.com
 https://fonts.gstatic.com
-https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600p
 
 <style>
 
 :root{
-    --gold:#d6b063;
-    --gold-soft:#af8a3d;
-    --text:#d4d4d4;
+    --gold:#d9b15c;
+    --gold-soft:#af8f49;
     --bg:#050505;
+    --text:#d2d2d2;
 }
 
 *{
@@ -31,32 +33,23 @@ html{
 }
 
 body{
-    background:var(--bg);
-    color:white;
-    font-family:'Cinzel', serif;
-    overflow-x:hidden;
-}
-
-/* Hintergrund */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(255,255,255,.02) 0%,
-            rgba(255,255,255,0) 55%
+            #111111 0%,
+            #050505 60%,
+            #000000 100%
         );
 
-    pointer-events:none;
+    color:white;
+
+    font-family:'Cinzel',serif;
+
+    overflow-x:hidden;
 }
 
-/* ===================================
-   HERO
-=================================== */
+/* HERO */
 
 .hero{
 
@@ -76,16 +69,16 @@ body::before{
 
 .hero-logo{
 
-    width:min(700px,80vw);
+    width:min(750px,85vw);
 
     opacity:0;
 
     animation:
-        fadeIn 3s ease forwards,
+        fadeIn 2.5s ease forwards,
         sway 240s ease-in-out infinite;
 }
 
-.scroll-indicator{
+.scroll{
 
     position:absolute;
 
@@ -95,16 +88,14 @@ body::before{
 
     transform:translateX(-50%);
 
-    color:#7d6330;
+    color:#8b6a28;
 
-    letter-spacing:.4em;
+    letter-spacing:.45em;
 
-    font-size:.75rem;
+    font-size:.8rem;
 }
 
-/* ===================================
-   CONTENT
-=================================== */
+/* CONTENT */
 
 .section{
 
@@ -114,7 +105,7 @@ body::before{
     justify-content:center;
     align-items:center;
 
-    padding:100px 30px;
+    padding:100px 40px;
 }
 
 .content{
@@ -128,7 +119,7 @@ body::before{
 
     color:var(--gold);
 
-    font-size:clamp(2rem,5vw,4rem);
+    font-size:clamp(2rem,4vw,4rem);
 
     margin-bottom:20px;
 }
@@ -137,34 +128,21 @@ body::before{
 
     color:var(--gold-soft);
 
-    margin-bottom:70px;
-
     letter-spacing:.15em;
 
-    font-size:1rem;
+    margin-bottom:60px;
 }
 
 .story{
 
     color:var(--text);
 
+    font-size:1.1rem;
+
     line-height:2;
-
-    font-size:1.08rem;
 }
 
-.section-title{
-
-    color:var(--gold);
-
-    font-size:clamp(1.8rem,4vw,3rem);
-
-    margin-bottom:40px;
-}
-
-/* ===================================
-   SCROLL EFFECT
-=================================== */
+/* FADE IN */
 
 .reveal{
 
@@ -184,9 +162,7 @@ body::before{
     transform:translateY(0);
 }
 
-/* ===================================
-   ANIMATIONEN
-=================================== */
+/* ANIMATION */
 
 @keyframes fadeIn{
 
@@ -197,7 +173,6 @@ body::before{
     to{
         opacity:1;
     }
-
 }
 
 @keyframes sway{
@@ -239,10 +214,6 @@ body::before{
 
 <body>
 
-<!-- ===================================
-     HERO
-=================================== -->
-
 <section class="hero">
 
     <div class="hero-inner">
@@ -251,53 +222,47 @@ body::before{
 
     </div>
 
-    <div class="scroll-indicator">
+    <div class="scroll">
         SCROLL
     </div>
 
 </section>
-
-<!-- ===================================
-     FAMILIA PER GENERATIONES
-=================================== -->
 
 <section class="section">
 
     <div class="content reveal">
 
         <div class="motto">
+
             Familia per Generationes
+
         </div>
 
         <div class="origin">
+
             Lauperswil im Emmental seit 1650
+
         </div>
 
     </div>
 
 </section>
 
-<!-- ===================================
-     GESCHICHTE
-=================================== -->
-
 <section class="section">
 
     <div class="content reveal">
 
-        <div class="section-title">
+        <div class="motto">
+
             Die Familie KŸPFER
+
         </div>
 
         <div class="story">
 
-            Die Familie KŸPFER ist im Emmental seit mindestens
-            1650 nachweisbar.
+            Die Familie KŸPFER ist im Emmental seit mindestens 1650 nachweisbar.
 
-            Diese Website wird schrittweise zu einem digitalen
-            Familienarchiv ausgebaut und soll Herkunft,
-            Geschichte, Dokumente, Fotografien und Erinnerungen
-            über Generationen hinweg bewahren.
+            Diese Website wird schrittweise zu einem digitalen Familienarchiv ausgebaut und soll Herkunft, Geschichte, Dokumente, Fotografien und Erinnerungen über Generationen hinweg bewahren.
 
         </div>
 
@@ -307,11 +272,10 @@ body::before{
 
 <script>
 
-const observer = new IntersectionObserver(
+const observer =
+new IntersectionObserver(entries => {
 
-(entries)=>{
-
-    entries.forEach(entry=>{
+    entries.forEach(entry => {
 
         if(entry.isIntersecting){
 
@@ -321,17 +285,13 @@ const observer = new IntersectionObserver(
 
     });
 
-},
-
-{
+},{
     threshold:0.2
-}
-
-);
+});
 
 document
 .querySelectorAll('.reveal')
-.forEach(el=>observer.observe(el));
+.forEach(el => observer.observe(el));
 
 </script>
 
