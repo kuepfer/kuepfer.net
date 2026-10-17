@@ -71,9 +71,17 @@ body{
 
     display:block;
 
-    transition:
-        transform 1.2s ease,
-        width 1.2s ease;
+    position:fixed;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index:999;
+
+    pointer-events:none;
 
     animation:
         fadeIn 2s ease,
@@ -82,20 +90,7 @@ body{
 
 /* LOGO KLEIN NACH SCROLL */
 
-.hero-logo.compact{
 
-    position:fixed;
-
-    top:25px;
-    right:25px;
-
-    width:180px;
-
-    z-index:999;
-
-    animation:
-        swaySmall 240s ease-in-out infinite;
-}
 
 /* SCROLL HINWEIS */
 
@@ -339,22 +334,31 @@ document
 /* Wappen rechts oben */
 
 const logo =
-document.getElementById('heroLogo');
+document.getEleme*tById('heroLogo');
 
-window.addEventListener('scroll', () => {
+window.addEven*Listener('scroll', () => {
 
-    if(window.scrollY > 150){
+    co*st scroll = window.scrollY;
 
-        logo.classList.add('compact');
+    c*nst maxScroll = 1000;
 
-    }
-    else{
+    const p*ogress = Math.min(scroll / maxScro*l, 1);
 
-        logo.classList.remove('compact');
+    const scale = 1 - (pro*ress * 0.85);
 
-    }
+    const moveX = p*ogress * 700;
+    const moveY = pr*gress * -280;
 
-});
+    logo.style.tran*form =
+        `translate(
+       *    calc(-50% + ${moveX}px),
+     *      calc(-50% + ${moveY}px)
+    *   )
+        scale(${scale})`;
+
+})*
+
+
 
 </script>
 
