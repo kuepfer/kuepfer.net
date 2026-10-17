@@ -69,8 +69,6 @@ body{
 
     margin:auto;
 
-    transition:transform 0.15s linear;
-
     animation:
         fadeIn 2s ease,
         sway 240s ease-in-out infinite;
@@ -319,29 +317,6 @@ document
 .querySelectorAll('.reveal')
 .forEach(el => observer.observe(el));
 
-/* Wappen rechts oben */
-
-const logo =
-document.getElementById('heroLogo');
-
-window.addEventListener('scroll', () => {
-
-    const scroll = window.scrollY;
-
-    const maxScroll = 1200;
-
-    const progress = Math.min(scroll / maxScroll, 1);
-
-    const scale = 1 - (progress * 0.75);
-
-    const moveX = progress * 520;
-    const moveY = progress * -220;
-
-    logo.style.transform =
-        `translate(${moveX}px, ${moveY}px)
-         scale(${scale})`;
-
-});
 
 </script>
 
