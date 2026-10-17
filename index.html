@@ -87,12 +87,21 @@ body{
 
     bottom:35px;
 
+    left:50%;
+
+    transform:translateX(-50%);
+
     color:var(--gold-soft);
 
     letter-spacing:.45em;
 
     font-size:.75rem;
+
+    opacity:0.8;
+
+    z-index:10;
 }
+``
 
 /* SEKTIONEN */
 
@@ -323,11 +332,11 @@ document.getElementById('heroLogo');
 
 window.addEventListener('scroll', () => {
 
-    if (window.scrollY > 300) {
+    if (window.scrollY > 700) {
 
         logo.style.position = 'fixed';
-        logo.style.top = '180px';
-        logo.style.right = '80px';
+        logo.style.top = '120px';
+        logo.style.right = '60px';
         logo.style.left = 'auto';
 
         logo.style.width = '280px';
