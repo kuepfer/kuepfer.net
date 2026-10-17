@@ -63,7 +63,7 @@ body{
 
 .hero-logo{
 
-    width:min(450px,55vw);
+    width:min(700px,80vw);
 
     display:block;
 
@@ -323,32 +323,7 @@ document
 .querySelectorAll('.reveal')
 .forEach(el => observer.observe(el));
 
-/* Wappen rechts oben */
 
-const logo =
-document.getElementById('heroLogo');
-
-window.addEventListener('scroll', () => {
-
-    const scroll = window.scrollY;
-
-    const maxScroll = 1000;
-
-    const progress = Math.min(scroll / maxScroll, 1);
-
-    const scale = 1 - (progress * 0.85);
-
-    const moveX = progress * 700;
-    const moveY = progress * -280;
-
-logo.style.transform =
-    `translate(
-        calc(-50% + ${moveX}px),
-        calc(-50% + ${moveY}px)
-    )
-    scale(${scale})`;
-
-});
 
 </script>
 
