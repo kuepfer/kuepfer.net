@@ -318,28 +318,37 @@ document
 .querySelectorAll('.reveal')
 .forEach(el => observer.observe(el));
 
- const logo =
+const logo =
 document.getElementById('heroLogo');
 
 window.addEventListener('scroll', () => {
 
-    const scroll = window.scrollY;
+    if (window.scrollY > 300) {
 
-    const progress =
-        Math.min(scroll / 700, 1);
+        logo.style.position = 'fixed';
+        logo.style.top = '20px';
+        logo.style.right = '20px';
+        logo.style.left = 'auto';
 
-    const scale =
-        1 - (progress * 0.60);
+        logo.style.width = '180px';
 
-    const moveX =
-        progress * 180;
+        logo.style.transform = 'none';
 
-    const moveY =
-        progress * -80;
+        logo.style.zIndex = '999';
 
-    logo.style.transform =
-        `translate(${moveX}px, ${moveY}px)
-         scale(${scale})`;
+    } else {
+
+        logo.style.position = 'relative';
+
+        logo.style.top = '';
+        logo.style.right = '';
+        logo.style.left = '';
+
+        logo.style.width = 'min(750px,80vw)';
+
+        logo.style.transform = 'none';
+
+    }
 
 });
 
