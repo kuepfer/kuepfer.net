@@ -7,16 +7,12 @@
 
 <title>KŸPFER</title>
 
-<link://fonts.googleapis.com
-<link relonts.gstatic.com
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap"
-ot{
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap"
-    rel="stylesheet">
+ href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap"
+ rel="stylesheet">
 
 <style>
 
@@ -326,31 +322,26 @@ document
 /* Wappen rechts oben */
 
 const logo =
-document.getEleme*tById('heroLogo');
+document.getElementById('heroLogo');
 
-window.addEven*Listener('scroll', () => {
+window.addEventListener('scroll', () => {
 
-    co*st scroll = window.scrollY;
+    const scroll = window.scrollY;
 
-    c*nst maxScroll = 1000;
+    const maxScroll = 1200;
 
-    const p*ogress = Math.min(scroll / maxScro*l, 1);
+    const progress = Math.min(scroll / maxScroll, 1);
 
-    const scale = 1 - (pro*ress * 0.85);
+    const scale = 1 - (progress * 0.75);
 
-    const moveX = p*ogress * 700;
-    const moveY = pr*gress * -280;
+    const moveX = progress * 520;
+    const moveY = progress * -220;
 
-    logo.style.tran*form =
-        `translate(
-       *    calc(-50% + ${moveX}px),
-     *      calc(-50% + ${moveY}px)
-    *   )
-        scale(${scale})`;
+    logo.style.transform =
+        `translate(${moveX}px, ${moveY}px)
+         scale(${scale})`;
 
-})*
-
-
+});
 
 </script>
 
