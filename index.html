@@ -329,13 +329,13 @@ window.addEventListener('scroll', () => {
         Math.min(scroll / 700, 1);
 
     const scale =
-        1 - (progress * 0.80);
+        1 - (progress * 0.60);
 
     const moveX =
-        progress * 550;
+        progress * 180;
 
     const moveY =
-        progress * -350;
+        progress * -80;
 
     logo.style.transform =
         `translate(${moveX}px, ${moveY}px)
