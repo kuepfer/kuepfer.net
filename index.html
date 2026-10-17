@@ -69,11 +69,10 @@ body{
 
     margin:auto;
 
-    transition:transform 0.15s linear;
+    transition:all 0.6s ease;
 
     animation:fadeIn 2s ease;
 }
-``
 
 /* LOGO KLEIN NACH SCROLL */
 
@@ -91,17 +90,17 @@ body{
 
     transform:translateX(-50%);
 
-    color:var(--gold-soft);
+    color:#d6b063;
 
     letter-spacing:.45em;
 
-    font-size:.75rem;
+    font-size:1rem;
 
     opacity:0.8;
-
-    z-index:10;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1000;
 }
-``
 
 /* SEKTIONEN */
 
@@ -332,14 +331,14 @@ document.getElementById('heroLogo');
 
 window.addEventListener('scroll', () => {
 
-    if (window.scrollY > 700) {
+    if (window.scrollY > 300) {
 
         logo.style.position = 'fixed';
         logo.style.top = '120px';
-        logo.style.right = '60px';
+        logo.style.right = '40px';
         logo.style.left = 'auto';
 
-        logo.style.width = '280px';
+        logo.style.width = '220px';
 
         logo.style.transform = 'none';
 
