@@ -1,268 +1,362 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KŸPFER</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    https://fonts.googleapis.com
-    https://fonts.gstatic.com
-    <link href="https://fonts.googleapis.com/css2?family=Cin;500;600&display=swap
+<title>KŸPFER</title>
 
-    <style>
+<link://fonts.googleapis.com
+<link relonts.gstatic.com
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        :root{
-            --bg:#050505;
-            --gold:#d6b063;
-            --gold-soft:#b99549;
-            --text:#d0d0d0;
-        }
+<link
+href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap"
+ot{
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+<style>
 
-        html{
-            scroll-behavior:smooth;
-        }
+:root{
+    --gold:#d6b063;
+    --gold-soft:#b08b47;
+    --text:#d0d0d0;
+    --bg:#050505;
+}
 
-        body{
-            background:var(--bg);
-            color:white;
-            font-family:'Cinzel', serif;
-            overflow-x:hidden;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* HERO */
+html{
+    scroll-behavior:smooth;
+}
 
-        .hero{
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            position:relative;
+body{
 
-            background:
-                radial-gradient(
-                    circle at center,
-                    #131313 0%,
-                    #070707 45%,
-                    #000000 100%
-                );
-        }
+    background:
+    radial-gradient(
+        circle at center,
+        #111111 0%,
+        #050505 55%,
+        #000000 100%
+    );
 
-        .hero-content{
-            text-align:center;
-        }
+    font-family:'Cinzel', serif;
 
-        .hero-logo{
-            width:min(700px,80vw);
-            display:block;
-            margin:auto;
+    overflow-x:hidden;
+}
 
-            animation:
-                fadeIn 2s ease forwards,
-                sway 240s ease-in-out infinite;
-        }
+/* HERO */
 
-        .scroll-hint{
-            position:absolute;
-            bottom:35px;
-            left:50%;
-            transform:translateX(-50%);
+.hero{
 
-            color:#8f6f2a;
-            letter-spacing:.45em;
-            font-size:.8rem;
-        }
+    height:100vh;
 
-        /* CONTENT */
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-        section.content-section{
-            min-height:100vh;
+    position:relative;
+}
 
-            display:flex;
-            justify-content:center;
-            align-items:center;
+.hero-logo{
 
-            padding:80px 30px;
-        }
+    width:min(750px,80vw);
 
-        .content{
-            max-width:900px;
-            text-align:center;
-        }
+    display:block;
 
-        .headline{
-            color:var(--gold);
-            font-size:clamp(2rem,4vw,4rem);
-            margin-bottom:20px;
-        }
+    transition:
+        transform 1.2s ease,
+        width 1.2s ease;
 
-        .subheadline{
-            color:var(--gold-soft);
-            letter-spacing:.15em;
-            margin-bottom:60px;
-        }
+    animation:
+        fadeIn 2s ease,
+        sway 240s ease-in-out infinite;
+}
 
-        .text{
-            color:var(--text);
-            line-height:2;
-            font-size:1.1rem;
-        }
+/* LOGO KLEIN NACH SCROLL */
 
-        /* REVEAL */
+.hero-logo.compact{
 
-        .reveal{
-            opacity:0;
-            transform:translateY(50px);
-            transition:
-                opacity 1.5s ease,
-                transform 1.5s ease;
-        }
+    position:fixed;
 
-        .reveal.visible{
-            opacity:1;
-            transform:translateY(0);
-        }
+    top:25px;
+    right:25px;
 
-        /* ANIMATIONEN */
+    width:180px;
 
-        @keyframes fadeIn{
+    z-index:999;
 
-            from{
-                opacity:0;
-            }
+    animation:
+        swaySmall 240s ease-in-out infinite;
+}
 
-            to{
-                opacity:1;
-            }
-        }
+/* SCROLL HINWEIS */
 
-        @keyframes sway{
+.scroll-indicator{
 
-            0%{
-                transform:
-                    perspective(4000px)
-                    rotateY(0deg);
-            }
+    position:absolute;
 
-            25%{
-                transform:
-                    perspective(4000px)
-                    rotateY(-2deg);
-            }
+    bottom:35px;
 
-            50%{
-                transform:
-                    perspective(4000px)
-                    rotateY(0deg);
-            }
+    color:var(--gold-soft);
 
-            75%{
-                transform:
-                    perspective(4000px)
-                    rotateY(2deg);
-            }
+    letter-spacing:.45em;
 
-            100%{
-                transform:
-                    perspective(4000px)
-                    rotateY(0deg);
-            }
-        }
+    font-size:.75rem;
+}
 
-    </style>
+/* SEKTIONEN */
+
+.section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:80px 30px;
+}
+
+.content{
+
+    max-width:900px;
+
+    text-align:center;
+}
+
+.motto{
+
+    color:var(--gold);
+
+    font-size:clamp(2rem,5vw,4rem);
+
+    margin-bottom:20px;
+}
+
+.origin{
+
+    color:var(--gold-soft);
+
+    margin-bottom:60px;
+
+    letter-spacing:.15em;
+}
+
+.story{
+
+    color:var(--text);
+
+    line-height:2;
+
+    font-size:1.1rem;
+}
+
+.section-title{
+
+    color:var(--gold);
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    margin-bottom:40px;
+}
+
+/* EINBLENDEN */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* ANIMATIONEN */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes sway{
+
+    0%{
+        transform:rotateY(0deg);
+    }
+
+    25%{
+        transform:rotateY(-2deg);
+    }
+
+    50%{
+        transform:rotateY(0deg);
+    }
+
+    75%{
+        transform:rotateY(2deg);
+    }
+
+    100%{
+        transform:rotateY(0deg);
+    }
+
+}
+
+@keyframes swaySmall{
+
+    0%{
+        transform:rotateY(0deg);
+    }
+
+    25%{
+        transform:rotateY(-1deg);
+    }
+
+    50%{
+        transform:rotateY(0deg);
+    }
+
+    75%{
+        transform:rotateY(1deg);
+    }
+
+    100%{
+        transform:rotateY(0deg);
+    }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <!-- HERO -->
+<section class="hero">
 
-    <section class="hero">
+    <img
+        src="version3.png"
+        alt="KŸPFER"
+        class="hero-logo"
+        id="heroLogo">
 
-        <div class="hero-content">
+    <div class="scroll-indicator">
+        SCROLL
+    </div>
 
-            version3.png
+</section>
+
+<section class="section">
+
+    <div class="content reveal">
+
+        <h1 class="motto">
+            Familia per Generationes
+        </h1>
+
+        <div class="origin">
+            Lauperswil im Emmental seit 1650
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="content reveal">
+
+        <h2 class="section-title">
+            Die Familie KŸPFER
+        </h2>
+
+        <div class="story">
+
+            Die Familie KŸPFER ist im Emmental seit mindestens 1650
+            nachweisbar.
+
+            Diese Website wird schrittweise zu einem digitalen
+            Familienarchiv ausgebaut und soll Herkunft, Geschichte,
+            Dokumente, Fotografien und Erinnerungen über Generationen
+            hinweg bewahren.
 
         </div>
 
-        <div class="scroll-hint">
-            SCROLL
-        </div>
+    </div>
 
-    </section>
+</section>
 
-    <!-- FAMILIA -->
+<script>
 
-    <section class="content-section">
+/* Fade-In Sektionen */
 
-        <div class="content reveal">
+const observer =
+new IntersectionObserver((entries)=>{
 
-            <h1 class="headline">
-                Familia per Generationes
-            </h1>
+    entries.forEach((entry)=>{
 
-            <div class="subheadline">
-                Lauperswil im Emmental seit 1650
-            </div>
+        if(entry.isIntersecting){
 
-        </div>
+            entry.target.classList.add('visible');
 
-    </section>
+        }
 
-    <!-- GESCHICHTE -->
+    });
 
-    <section class="content-section">
+},{
+    threshold:0.2
+});
 
-        <div class="content reveal">
+document
+.querySelectorAll('.reveal')
+.forEach(el => observer.observe(el));
 
-            <h2 class="headline">
-                Die Familie KŸPFER
-            </h2>
+/* Wappen rechts oben */
 
-            <div class="text">
+const logo =
+document.getElementById('heroLogo');
 
-                Die Familie KŸPFER ist im Emmental seit mindestens
-                1650 nachweisbar.
+window.addEventListener('scroll', () => {
 
-                Diese Website wird schrittweise zu einem digitalen
-                Familienarchiv ausgebaut und soll Herkunft,
-                Geschichte, Dokumente, Fotografien und Erinnerungen
-                über Generationen hinweg bewahren.
+    if(window.scrollY > 150){
 
-            </div>
+        logo.classList.add('compact');
 
-        </div>
+    }
+    else{
 
-    </section>
+        logo.classList.remove('compact');
 
-    <script>
+    }
 
-        const observer =
-            new IntersectionObserver(entries => {
+});
 
-                entries.forEach(entry => {
-
-                    if(entry.isIntersecting){
-                        entry.target.classList.add('visible');
-                    }
-
-                });
-
-            },{
-                threshold:0.2
-            });
-
-        document
-            .querySelectorAll('.reveal')
-            .forEach(el => observer.observe(el));
-
-    </script>
+</script>
 
 </body>
 </html>
